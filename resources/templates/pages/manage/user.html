@@ -1,0 +1,48 @@
+{% extends "templates/base.html" %}
+{% block title %} Lectures management{% endblock %}
+{% block head-content %}
+<script src="/public/scripts/manage/user.js"></script>
+{% endblock %}
+{% block content %}
+<nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+        <a class="navbar-item" href="/">
+            <p>Users</p>
+        </a>
+    </div>
+    <div class="navbar-end">
+        <div class="navbar-item">
+            <a class="button" href="/manage">Back</a>
+        </div>
+    </div>
+</nav>
+<div class="columns">
+    <div class="column">
+        <div class="card">
+            <header class="card-header">
+                <p class="card-header-title">User List</p>
+            </header>
+            <div class="card-content">
+                <div class="content">
+                    <button id="apply_btn" onclick="apply();" class="button is-warning" disabled>Apply changes</button>
+                    <div id="user_viewer_area" class="pt-4">
+                        <table id="user_table" class="table is-bordered">
+                            <thead id="user_table_head">
+                                <tr class="is-primary">
+                                    <th>UID</th>
+                                    <th>username</th>
+                                    <th>contact</th>
+                                    <th>groups</th>
+                                    <th>Lock</th>
+                                </tr>
+                                <tbody id="user_table_body">
+                                </tbody>
+                            </thead>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

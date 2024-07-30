@@ -1,0 +1,9 @@
+{:config {:title "確認テスト2"
+          :order :ascending}
+ :tests [{:type :description
+          :exam "Aについて説明してください"}
+         {:type :submission
+          :exam "作成したファイルを提出してください"
+          :limit {:filesize 51200
+                  :filetype "zip"}}]}
+

@@ -1,0 +1,26 @@
+{% extends "templates/base.html" %}
+{% block title %}{{list-target}}{% endblock %}
+{% block head-content %}
+<script src="/public/scripts/lecture/main.js"></script>
+{% endblock %}
+{% block content %}
+<nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+        <a class="navbar-item" href="/">
+            <p>{{list-target}} List</p>
+        </a>
+    </div>
+    <div class="navbar-end">
+        <div class="navbar-item">
+            <a class="button" onclick="page_back();">Back</a>
+        </div>
+    </div>
+</nav>
+<main class="hero is-info is-fullheight">
+    <section class="section">
+        <div class="grid" id="listtop">
+        </div>
+    </section>
+</main>
+{% endblock %}
+

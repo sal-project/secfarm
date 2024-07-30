@@ -1,0 +1,8 @@
+{:config {:order :ascending}
+ :tests [{:type :selection
+          :exam "正しい選択肢を選んでください"
+          :options ["選択肢1" "選択肢2" "選択肢3"]
+          :answer 1}
+         {:type :written
+          :exam "適切に説明しなさい"}]}
+

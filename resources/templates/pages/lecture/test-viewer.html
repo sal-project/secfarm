@@ -1,0 +1,62 @@
+{% extends "templates/base.html" %}
+{% block title %}{{test-title}}{% endblock %}
+{% block head-content %}
+<script src="/public/scripts/lecture/question.js"></script>
+{% endblock %}
+{% block content %}
+<nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+        <a class="navbar-item" href="/">
+            <p>{{test-title}}</p>
+        </a>
+    </div>
+    <div class="navbar-end">
+        <div class="navbar-item">
+            <a id="page_back_btn" class="button" href="/">Back</a>
+        </div>
+    </div>
+</nav>
+<main class="hero has-background-warning-light is-fullheight">
+    <section id="questions" class="hero-body">
+        <div class="container">
+            <form id="answerform" class="main-answer-form box" method="POST" action="">
+                {% for test in tests %}
+                <div class="question field mb-6">
+                    <label class="qmsg label">Q. {{test.exam}}</label>
+                    {% if test.type = :selection %}
+                    <fieldset>
+                        {% for choice in test.options %}
+                        <div class="control">
+                            <input type="radio" id="{{test.serial}}-{{choice}}" name="{{test.serial}}" value="{{choice}}" />
+                            <label for="{{test.serial}}-{{choice}}">{{choice}}</label>
+                        </div>
+                        {% endfor %}
+                    </fieldset>
+                    {% elif test.type = :input %}
+                    <input type="text" class="input" id="q-{{test.serial}}" name="{{test.serial}}" />
+                    {% elif test.type = :multiselection %}
+                    <fieldset>
+                        {% for choice in test.options %}
+                        <div>
+                            <input type="checkbox" id="{{test.serial}}-{{choice}}" name="{{test.serial}}" value="{{choice}}" />
+                            <label class="checkbox" for="{{test.serial}}-{{choice}}">{{choice}}</label>
+                        </div>
+                        {% endfor %}
+                    </fieldset>
+                    {% elif test.type = :description %}
+                    <p>No {{test.serial}}: This type has not been implemented yet.</p>
+                    {% elif test.type = :submission %}
+                    <p>No {{test.serial}}: This type has not been implemented yet.</p>
+                    {% else %}
+                    <p>No {{test.serial}}: question is not supported data type.</p>
+                    {% endif %}
+                </div>
+                {% endfor %}
+                <div class="submitarea field">
+                    <input id="answer-submit-btn" type="submit" class="button is-warning" value="Send my answers!!" />
+                </div>
+            </form>
+        </div>
+    </section>
+</main>
+{% endblock %}

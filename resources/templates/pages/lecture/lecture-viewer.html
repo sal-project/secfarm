@@ -1,0 +1,61 @@
+{% extends "templates/base.html" %}
+{% block title %}
+{% if nickname %}
+{{nickname}}
+{% else %}
+{{title}}
+{% endif %}
+{% endblock %}
+{% block head-content %}
+<script src="/public/scripts/lecture/viewer.js"></script>
+{% endblock %}
+{% block content %}
+<nav id="navi" class="navbar" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+        <a class="navbar-item" href="/">
+            <p>
+                {% if nickname %}
+                {{nickname}}
+                {% else %}
+                {{title}}
+                {% endif %}
+            </p>
+        </a>
+    </div>
+    <div class="navbar-end">
+        <div class="navbar-item">
+            <a id="markbtn" class="button is-success" onclick="mark_completed();">Mark as completed</a>
+        </div>
+        <div class="navbar-item">
+            <a id="page_back_btn" class="button" href="/">Back</a>
+        </div>
+    </div>
+</nav>
+<main id="screen" class="columns m-0 p-0">
+    <div class="column is-one-fifth is-hidden" id="menuarea">
+        <aside class="menu">
+            <p class="menu-label">Contents</p>
+            <ul class="menu-list" id="contentslist">
+            </ul>
+        </aside>
+    </div>
+    <div class="column m-0 p-0 has-background-white" style="height: 100%;">
+        <iframe id="content" class="contentsiframe" width="100%" height="100%" src="{{main}}" frameborder="0"></iframe>
+    </div>
+    <div id="mark" class="modal">
+        <div class="modal-background"></div>
+        <div class="modal-card">
+            <section class="modal-card-body">
+                Have you completed the content?
+            </section>
+            <footer class="modal-card-foot">
+                <div class="buttons">
+                    <button class="button is-success" onclick="mark_completed_yes()">YES</button>
+                    <button class="button" onclick="mark_cancel()">No</button>
+                </div>
+            </footer>
+        </div>
+        <button class="modal-close is-large" aria-label="close"></button>
+    </div>
+</main>
+{% endblock %}

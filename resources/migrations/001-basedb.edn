@@ -1,0 +1,49 @@
+{:up
+ ["CREATE TABLE IF NOT EXISTS users (uid bigserial primary key,
+username varchar(32) NOT NULL,
+contact varchar(1024),
+passwdinfo varchar(1024) NOT NULL,
+locked boolean NOT NULL default FALSE,
+UNIQUE(username));"
+  
+  "CREATE TABLE IF NOT EXISTS groups (gid bigserial primary key,
+groupname varchar(32) NOT NULL);"
+
+  "CREATE TABLE IF NOT EXISTS grouping (uid bigint references users(uid),
+gid bigint references groups(gid),
+PRIMARY KEY (uid, gid));"
+
+  "CREATE TABLE IF NOT EXISTS coursepriv (gid bigint references groups(gid),
+course_id varchar(1024),
+show_p boolean NOT NULL default FALSE,
+attend_p boolean NOT NULL default FALSE,
+execute_p boolean NOT NULL default FALSE,
+PRIMARY KEY(gid, course_id));"
+
+  "CREATE TABLE IF NOT EXISTS courseprog (pgid bigserial primary key,
+uid bigint references users(uid) NOT NULL,
+course_id varchar(1024) NOT NULL,
+package_id varchar(1024) NOT NULL,
+content_path varchar(5120) NOT NULL,
+progress smallint default 0 CONSTRAINT probability_range CHECK (progress >= 0 AND progress <= 100),
+UNIQUE(uid, course_id, package_id, content_path));"
+
+  "CREATE TABLE IF NOT EXISTS testresultlog (rsid bigserial primary key,
+uid bigint references users(uid) NOT NULL,
+course_id varchar(1024) NOT NULL,
+package_id varchar(1024) NOT NULL,
+content_path varchar(5120) NOT NULL,
+revisionnum integer NOT NULL,
+answerdate timestamp NOT NULL default CURRENT_TIMESTAMP,
+scoremax integer NOT NULL,
+score integer NOT NULL,
+answers text NOT NULL,
+incomplete boolean NOT NULL default FALSE,
+UNIQUE(uid, course_id, package_id, content_path, revisionnum));"]
+
+ :down ["DROP TABLE testresultlog;"
+        "DROP TABLE courseprog;"
+        "DROP TABLE coursepriv;"
+        "DROP TABLE grouping;"
+        "DROP TABLE groups;"
+        "DROP TABLE users;"]}

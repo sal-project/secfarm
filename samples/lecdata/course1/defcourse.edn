@@ -1,0 +1,6 @@
+{:title "基本コース"
+ :id "opamp-secfarm-sample-course1"
+ :description "初級からある技術について学びます"
+ :license "N/A"
+ :packages [{:package "firststep"}
+            {:package "secondstep"}]}

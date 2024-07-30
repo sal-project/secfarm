@@ -1,0 +1,6 @@
+{:title "応用ステップ"
+ :id "secondstep"
+ :description "応用編です"
+ :control {:type "simple"}
+ :contents [{:content "main.txt" :type :doc}
+            {:content "main.edn" :type :test}]}

@@ -1,0 +1,31 @@
+{% extends "templates/base.html" %}
+{% block title %} Management menu{% endblock %}
+{% block head-content %}
+{% endblock %}
+{% block content %}
+<nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+        <a class="navbar-item" href="/">
+            <p>Management</p>
+        </a>
+    </div>
+    <div class="navbar-end">
+        <div class="navbar-item">
+            <a class="button" href="/">Back</a>
+        </div>
+    </div>
+</nav>
+<div class="columns">
+    <div class="column">
+        <div class="menu">
+            <p class="menu-label">Links</p>
+            <ul class="menu-list">
+                <li><a href="/manage/user">User management</a></li>
+                <li><a href="/manage/lecture">Privilege management</a></li>
+                <li><a href="/manage/progress">Progress management</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

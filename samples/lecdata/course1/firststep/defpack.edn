@@ -1,0 +1,5 @@
+{:title "最初のステップ"
+ :id "first"
+ :description "基本的な事項を抑えます"
+ :control {:type "singlepage"}
+ :files [{:file "01-first.md" :type :doc}]}

@@ -1,0 +1,23 @@
+{:config {:title "確認テスト1"
+          :order :random}
+ :tests [{:type :selection
+          :exam "192.168.0.1のような数字列の名称は何でしょうか"
+          :options ["IPアドレス" "MACアドレス" "ポート番号"]
+          :answer 1}
+         {:type :input
+          :exam "Common LispにおいてIFやLETのようなすべての引数が呼び出し時に必ずしも評価されない特殊な関数のことを何というでしょうか。"
+          :answer ["Special Form"
+                   "Special Forms"
+                   "スペシャルフォーム"
+                   "special form"
+                   "special forms"
+                   "Special form"
+                   "Special forms"
+                   "特殊形式"]}
+         {:type :multiselection
+          :exam "次の記述について、正しいものをすべて選択してください"
+          :options ["1つのNICに対して複数のIPを割り当てることで複数のIPを使い分けて通信を行うことができる"
+                    "MACアドレスはハードウェアに書き込まれているため自由に変更することはできない"
+                    "NICのプロミスキャスモードを有効にすることで自分宛以外のパケットを破棄しなくなる"]
+          :answer [1 3]}]}
+

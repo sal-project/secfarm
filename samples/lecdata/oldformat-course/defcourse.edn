@@ -1,0 +1,6 @@
+{:title "古いコース"
+ :id "opamp-secfarm-sample-oldformat"
+ :description "lecdataのフォーマットが古い形式です"
+ :license "N/A"
+ :contents [{:directory "firststep" :level 1}
+            {:directory "secondstep" :level 2}]}

@@ -1,0 +1,7 @@
+{:title "中級ステップ"
+ :id "second"
+ :description "発展的な内容を抑えます"
+ :control {:type "simple"}
+ :files [{:file "01-first.txt" :type :doc}
+         {:file "02-second.txt" :type :doc}
+         {:file "03-test.edn" :type :test}]}

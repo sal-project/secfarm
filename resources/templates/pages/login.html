@@ -1,0 +1,47 @@
+{% extends "templates/base.html" %}
+{% block title %} Login {% endblock %}
+{% block head-content %}
+{% endblock %}
+{% block content %}
+<body>
+    <section class="hero is-fullheight has-background-primary">
+        <div class="hero-body">
+            <div class="container">
+                <div class="columns is-centerd">
+                    <div class="column is-5-tablet is-4-desktop is-3-widescreen">
+                        <form method="POST" action="/login" class="box">
+                            <div class="field">
+                                <label for="username" class="label">Username</label>
+                                <div class="control">
+                                    <input type="text" name="username" class="input" required>
+                                </div>
+                            </div>
+                            <div class="field">
+                                <label for="password" class="label">Password</label>
+                                <div class="control">
+                                    <input type="password" name="password" class="input" required>
+                                </div>
+                            </div>
+                            <div class="field">
+                                <input type="submit" class="button is-success" value="Login" />
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--
+    <div id="login_dialog">
+        <div id="title_area">
+            <p>Login</p>
+        </div>
+        <form method="POST" action="/login">
+            <p>Username <input type="text" name="username"></p>
+            <p>Password <input type="password" name="password"></p>
+            <p><input type="submit" value="Login"></p>
+        </form>
+    </div>
+    -->
+</body>
+{% endblock %}

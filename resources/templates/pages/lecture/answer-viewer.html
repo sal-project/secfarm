@@ -1,0 +1,47 @@
+{% extends "templates/base.html" %}
+{% block title %}{{title}}{% endblock %}
+{% block head-content %}
+ <script src="/public/scripts/lecture/answer.js"></script>
+{% endblock %}
+{% block content %}
+<nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+        <a class="navbar-item" href="/">
+            <p>{{title}}</p>
+        </a>
+    </div>
+    <div class="navbar-end">
+        <div class="navbar-item">
+            <a id="page_back_btn" class="button" href="/">Back</a>
+        </div>
+    </div>
+</nav>
+<main class="hero is-fullheight has-background-primary">
+    <div class="columns m-1 is-multiline">
+        <div id="result" class="column is-full">
+            <div class="box">
+                <p> Your score: {{score}}/{{maxscore}}</p>
+            </div>
+        </div>
+        <div id="answers" class="column is-full">
+            <div>
+                {% for answer in answers %}
+                <div class="answer card">
+                    <div class="card-content">
+                        <div class="content">
+                            <h1 class="title is-6">Q. {{answer.exam}}</h1>
+                            <h2 class="subtitle is-6">Your Answer: {{answer.answer}}</h2>
+                            {% if answer.result %}
+                            <p class="has-text-black has-background-success-light">正解</p>
+                            {% else %}
+                            <p class="has-text-black has-background-danger-light">不正解</p>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</main>
+{% endblock %}

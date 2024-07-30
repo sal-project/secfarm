@@ -1,0 +1,51 @@
+{% extends "templates/base.html" %}
+{% block title %} Secfarm {% endblock %}
+{% block head-content %}
+<script src="/public/scripts/main.js"></script>
+{% endblock %}
+{% block content %}
+<nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+        <a class="navbar-item" href="/">
+            <img src="/public/images/icon.png" width="30" alt="project-logo">
+            <p class="ml-1">Secfarm</p>
+        </a>
+    </div>
+    <div class="navbar-end">
+      <div class="navbar-item">
+          <div class="buttons" id="session_btns">
+              <!-- Auto insert elements here -->
+          </div>
+        </div>
+      </div>
+    </div>
+</nav>
+<session class="hero is-fullheight video">
+    <div id="videoarea" class="hero-video">
+        <video id="bgvideo" poster="/public/images/bg.jpg" playsinline autoplay muted loop>
+            <source src="/public/video/bg1.mp4" type="video/mp4">
+        </video>
+    </div>
+    <div class="hero-body">
+        <div id="main-contents" class="container">
+            <h1 class="title has-text-light">Let's have fun learning technologies</h1>
+        </div>
+    </div>
+    <div class="hero-foot">
+        <div class="has-text-contered">
+        </div>
+    </div>
+</session>
+<footer class="footer">
+  <div class="content has-text-centered">
+    <p>
+      <strong>Secfarm</strong> by SAL Project
+      The source code is licensed
+      <a href="http://opensource.org/licenses/mit-license.php">MIT</a>.
+    </p>
+    <p>
+        Powered by <a href="https://clojure.org/">Clojure</a> and <a href="https://github.com/ring-clojure/ring">Ring</a> technologies.
+    </p>
+  </div>
+</footer>
+{% endblock %}

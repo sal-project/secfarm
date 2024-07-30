@@ -1,0 +1,17 @@
+{:config {:title "確認テスト"
+          :order :random}
+ :tests [{:type :selection
+          :exam "8.8.8.8のような数字列の名称は何でしょうか"
+          :options ["IPアドレス" "MACアドレス" "ポート番号"]
+          :answer 1}
+         {:type :input
+          :exam "自分宛以外のパケットも破棄せず受信するようにするモードで、特にWiresharkなどでパケットキャプチャをする際にONにすることが多いモードは何でしょう（カタカナで答えてください）"
+          :answer ["プロミスキャス・モード"
+                   "プロミスキャスモード"]}
+         {:type :multiselection
+          :exam "次の記述について、正しいものをすべて選択してください"
+          :options ["192.168.1.1/24と記載されている場合、サブネットマスクは255.255.0.0である"
+                    "MACアドレスにおけるOUIは24bitの固定長である"
+                    "初めてTCP/IPのプロトコル・スタックが実装されたWindowsはWindows98である"]
+          :answer [2]}]}
+

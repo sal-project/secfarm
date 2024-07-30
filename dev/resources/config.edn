@@ -1,0 +1,18 @@
+{:server {:port 3000
+          :lecdata ["/srv/dev/secfarm/lecdata"]}
+ :db {:datasource-option {:auto-commit        true
+                          :read-only          false
+                          :connection-timeout 30000
+                          :validation-timeout 5000
+                          :idle-timeout       600000
+                          :max-lifetime       1800000
+                          :minimum-idle       10
+                          :maximum-pool-size  10
+                          :pool-name          "db-pool"
+                          :adapter            "postgresql"
+                          :username           "devel"
+                          :password           "devel"
+                          :database-name      "secfarmdevel"
+                          :server-name        "localhost"
+                          :port-number        5432
+                          :register-mbeans    false}}}
